@@ -10,7 +10,7 @@ const FeedsColumn = () => {
   const onChange = (e) => setFeeds({
     [e.target.name]: e.target.checked,
   });
-  console.log('state: ', feeds)
+
   return (
     <div className="columns is-mobile">
       <div className="column">

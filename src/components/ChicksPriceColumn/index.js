@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 const ChicksPriceColumn = () => {
-  const [chicksCount, setChicksCount] = useState();
-  const [chickPrice, setChickPrice] = useState();
+  const [chicksCount, setChicksCount] = useState('');
+  const [chickPrice, setChickPrice] = useState('');
 
   const onChange = (e) => setChicksCount(e.target.value);
   const onChangeChickPrice = (e) => setChickPrice(e.target.value);
