@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from 'react';
 
 const ChicksPriceColumn = () => {
+  const [chicksCount, setChicksCount] = useState();
+  const [chickPrice, setChickPrice] = useState();
+
+  const onChange = (e) => setChicksCount(e.target.value);
+  const onChangeChickPrice = (e) => setChickPrice(e.target.value);
+
   return (
     <div class="columns is-mobile">
       <div class="column">
@@ -15,6 +21,8 @@ const ChicksPriceColumn = () => {
                   class="input is-rounded"
                   type="number"
                   placeholder="Number of chicks"
+                  onChange={onChange}
+                  value={chicksCount}
                 />
               </p>
             </div>
@@ -33,6 +41,8 @@ const ChicksPriceColumn = () => {
                   class="input is-rounded"
                   type="number"
                   placeholder="Price per chick"
+                  onChange={onChangeChickPrice}
+                  value={chickPrice}
                 />
               </p>
             </div>

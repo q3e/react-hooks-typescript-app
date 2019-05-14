@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 
 const FeedsColumn = () => {
+  const [feeds, setFeeds] = useState({
+    starterFeed: false,
+    growerFeed: false,
+    finisherFeed: false,
+  })
+
+  const onChange = (e) => setFeeds({
+    [e.target.name]: e.target.checked,
+  });
+  console.log('state: ', feeds)
   return (
     <div class="columns is-mobile">
       <div class="column">
@@ -12,9 +22,10 @@ const FeedsColumn = () => {
               id="starterFeed"
               type="checkbox"
               name="starterFeed"
-              checked="checked"
+              value={feeds.starterFeed}
+              onChange={onChange}
             />
-            <label for="starterFeed">Starter</label>
+            <label htmlFor="starterFeed">Starter</label>
           </div>
           <div class="field">
             <input
@@ -22,19 +33,21 @@ const FeedsColumn = () => {
               id="growerFeed"
               type="checkbox"
               name="growerFeed"
-              checked="checked"
+              value={feeds.growerFeed}
+              onChange={onChange}
             />
-            <label for="growerFeed">Grower</label>
+            <label htmlFor="growerFeed">Grower</label>
           </div>
           <div class="field">
             <input
               class="is-checkradio"
-              id="FinisherFeed"
+              id="finisherFeed"
               type="checkbox"
-              name="FinisherFeed"
-              checked="checked"
+              name="finisherFeed"
+              value={feeds.finisherFeed}
+              onChange={onChange}
             />
-            <label for="FinisherFeed">Finisher</label>
+            <label htmlFor="finisherFeed">Finisher</label>
           </div>
         </div>
       </div>
