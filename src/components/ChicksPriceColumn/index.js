@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 
 const ChicksPriceColumn = () => {
-  const [chicksCount, setChicksCount] = useState('');
-  const [chickPrice, setChickPrice] = useState('');
+  const [chicks, setChicks] = useState({
+		count: '',
+		price: '',
+	});
 
-  const onChange = (e) => setChicksCount(e.target.value);
-  const onChangeChickPrice = (e) => setChickPrice(e.target.value);
+  const onChange = (e) => setChicks({
+		...chicks,
+		[e.target.name]: e.target.value,
+	});
 
   return (
     <div className="columns is-mobile">
       <div className="column">
         <div className="field is-horizontal">
           <div className="field-label is-normal">
-            <label className="label">No. of chicks</label>
+            <label className="label">Chicks</label>
           </div>
           <div className="field-body">
             <div className="field">
@@ -20,9 +24,10 @@ const ChicksPriceColumn = () => {
                 <input
                   className="input is-rounded"
                   type="number"
-                  placeholder="Number of chicks"
+									placeholder="Number of chicks"
+									name="chicks"
                   onChange={onChange}
-                  value={chicksCount}
+                  value={chicks.count}
                 />
               </p>
             </div>
@@ -40,9 +45,10 @@ const ChicksPriceColumn = () => {
                 <input
                   className="input is-rounded"
                   type="number"
-                  placeholder="Price per chick"
-                  onChange={onChangeChickPrice}
-                  value={chickPrice}
+									placeholder="Price per chick"
+									name="price"
+                  onChange={onChange}
+                  value={chicks.price}
                 />
               </p>
             </div>
