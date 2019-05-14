@@ -8,9 +8,9 @@ const App = () => {
   return (
     <div className="app">
       <header className="App-header">
-        <div class="columns is-mobile is-centered">
-          <div class="column is-full">
-            <h3 class="title is-3">
+        <div className="columns is-mobile is-centered">
+          <div className="column is-full">
+            <h3 className="title is-3">
               Poultry Farming Cost and Profit Calculator
             </h3>
           </div>
@@ -18,17 +18,17 @@ const App = () => {
 
         <ChicksPriceColumn />
 
-        <div class="columns is-mobile">
-          <div class="column">
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label">Other costs</label>
+        <div className="columns is-mobile">
+          <div className="column">
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Other costs</label>
               </div>
-              <div class="field-body">
-                <div class="field">
-                  <p class="control">
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
                     <input
-                      class="input is-rounded"
+                      className="input is-rounded"
                       type="number"
                       placeholder="Other costs e.g rent, salary"
                     />

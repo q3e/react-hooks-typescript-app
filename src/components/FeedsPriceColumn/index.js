@@ -12,13 +12,13 @@ const FeedsColumn = () => {
   });
   console.log('state: ', feeds)
   return (
-    <div class="columns is-mobile">
-      <div class="column">
-        <h4 class="title is-4">Feeds Cost</h4>
-        <div class="container">
-          <div class="field">
+    <div className="columns is-mobile">
+      <div className="column">
+        <h4 className="title is-4">Feeds Cost</h4>
+        <div className="container">
+          <div className="field">
             <input
-              class="is-checkradio"
+              className="is-checkradio"
               id="starterFeed"
               type="checkbox"
               name="starterFeed"
@@ -27,9 +27,9 @@ const FeedsColumn = () => {
             />
             <label htmlFor="starterFeed">Starter</label>
           </div>
-          <div class="field">
+          <div className="field">
             <input
-              class="is-checkradio"
+              className="is-checkradio"
               id="growerFeed"
               type="checkbox"
               name="growerFeed"
@@ -38,9 +38,9 @@ const FeedsColumn = () => {
             />
             <label htmlFor="growerFeed">Grower</label>
           </div>
-          <div class="field">
+          <div className="field">
             <input
-              class="is-checkradio"
+              className="is-checkradio"
               id="finisherFeed"
               type="checkbox"
               name="finisherFeed"

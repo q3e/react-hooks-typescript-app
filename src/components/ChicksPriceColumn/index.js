@@ -8,17 +8,17 @@ const ChicksPriceColumn = () => {
   const onChangeChickPrice = (e) => setChickPrice(e.target.value);
 
   return (
-    <div class="columns is-mobile">
-      <div class="column">
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">No. of chicks</label>
+    <div className="columns is-mobile">
+      <div className="column">
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">No. of chicks</label>
           </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
+          <div className="field-body">
+            <div className="field">
+              <p className="control">
                 <input
-                  class="input is-rounded"
+                  className="input is-rounded"
                   type="number"
                   placeholder="Number of chicks"
                   onChange={onChange}
@@ -29,16 +29,16 @@ const ChicksPriceColumn = () => {
           </div>
         </div>
       </div>
-      <div class="column">
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Price/chick</label>
+      <div className="column">
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Price/chick</label>
           </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control">
+          <div className="field-body">
+            <div className="field">
+              <p className="control">
                 <input
-                  class="input is-rounded"
+                  className="input is-rounded"
                   type="number"
                   placeholder="Price per chick"
                   onChange={onChangeChickPrice}
