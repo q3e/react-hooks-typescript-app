@@ -25,7 +25,7 @@ const ChicksPriceColumn = () => {
                   className="input is-rounded"
                   type="number"
 									placeholder="Number of chicks"
-									name="chicks"
+									name="count"
                   onChange={onChange}
                   value={chicks.count}
                 />
@@ -55,6 +55,9 @@ const ChicksPriceColumn = () => {
           </div>
         </div>
       </div>
+			<div className="column">
+				{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(chicks.count * chicks.price)}
+			</div>
     </div>
   );
 };
