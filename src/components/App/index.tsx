@@ -1,10 +1,10 @@
-import React from "react";
-import FeedsPriceColumn from "../FeedsPriceColumn";
-import ChicksPriceColumn from "../ChicksPriceColumn";
+import React from 'react';
+import FeedsPriceColumn from '../FeedsPriceColumn';
+import ChicksPriceColumn from '../ChicksPriceColumn';
 
-import "../../styles/App.scss";
+import '../../styles/App.scss';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="app">
       <header className="App-header">

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const FeedPricePerBag = () => {
+const FeedPricePerBag: React.FC = () => {
 	const [feed, setFeed] = useState({
 		bags: '',
 		price: '',
 	})
 
-	const onChange = (e) => setFeed({
+	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setFeed({
 		...feed,
 		[e.target.name]: e.target.value,
 	});

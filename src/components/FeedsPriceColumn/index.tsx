@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import FeedsPricePerBag from '../FeedsPricePerBag';
 
-const FeedsColumn = () => {
+const FeedsColumn: React.FC = () => {
   const [feeds, setFeeds] = useState({
     starterFeed: false,
     growerFeed: false,
     finisherFeed: false,
   })
 
-  const onChange = (e) => setFeeds({
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setFeeds({
 		...feeds,
     [e.target.name]: e.target.checked,
   });
@@ -24,7 +24,7 @@ const FeedsColumn = () => {
               id="starterFeed"
               type="checkbox"
               name="starterFeed"
-              value={feeds.starterFeed}
+              checked={feeds.starterFeed}
               onChange={onChange}
             />
             <label htmlFor="starterFeed">Starter</label>
@@ -38,7 +38,7 @@ const FeedsColumn = () => {
               id="growerFeed"
               type="checkbox"
               name="growerFeed"
-              value={feeds.growerFeed}
+              checked={feeds.growerFeed}
               onChange={onChange}
             />
             <label htmlFor="growerFeed">Grower</label>
@@ -52,7 +52,7 @@ const FeedsColumn = () => {
               id="finisherFeed"
               type="checkbox"
               name="finisherFeed"
-              value={feeds.finisherFeed}
+              checked={feeds.finisherFeed}
               onChange={onChange}
             />
             <label htmlFor="finisherFeed">Finisher</label>

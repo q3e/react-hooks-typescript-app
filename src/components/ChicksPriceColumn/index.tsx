@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const ChicksPriceColumn = () => {
+const ChicksPriceColumn: React.FC = () => {
   const [chicks, setChicks] = useState({
 		count: '',
 		price: '',
 	});
 
-  const onChange = (e) => setChicks({
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setChicks({
 		...chicks,
 		[e.target.name]: e.target.value,
 	});
@@ -56,7 +56,10 @@ const ChicksPriceColumn = () => {
         </div>
       </div>
 			<div className="column">
-				{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' }).format(chicks.count * chicks.price)}
+				{
+					new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' })
+						.format(Number(chicks.count) * Number(chicks.price))
+				}
 			</div>
     </div>
   );
