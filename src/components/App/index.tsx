@@ -1,6 +1,9 @@
 import React from 'react';
+
 import FeedsPriceColumn from '../FeedsPriceColumn';
 import ChicksPriceColumn from '../ChicksPriceColumn';
+import TotalCost from '../TotalCost';
+import OtherCost from '../OtherCost';
 
 import '../../styles/App.scss';
 
@@ -18,28 +21,11 @@ const App: React.FC = () => {
 
         <ChicksPriceColumn />
 
-        <div className="columns is-mobile">
-          <div className="column">
-            <div className="field is-horizontal">
-              <div className="field-label is-normal">
-                <label className="label">Other costs</label>
-              </div>
-              <div className="field-body">
-                <div className="field">
-                  <p className="control">
-                    <input
-                      className="input is-rounded"
-                      type="number"
-                      placeholder="Other costs e.g rent, salary"
-                    />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+				<OtherCost />
 
         <FeedsPriceColumn />
+
+				<TotalCost totalCost=""/>
       </header>
     </div>
   );
