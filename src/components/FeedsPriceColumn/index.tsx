@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import FeedsPricePerBag from '../FeedsPricePerBag';
 
+type FeedsObject = {
+	starterFeed: boolean;
+	growerFeed: boolean;
+	finisherFeed: boolean;
+}
+
 const FeedsColumn: React.FC = () => {
-  const [feeds, setFeeds] = useState({
+  const [feeds, setFeeds] = useState<FeedsObject>({
     starterFeed: false,
     growerFeed: false,
     finisherFeed: false,

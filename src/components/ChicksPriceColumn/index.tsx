@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
+type ChicksObject = {
+  count: string;
+  price:  string;
+}
+
 const ChicksPriceColumn: React.FC = () => {
-  const [chicks, setChicks] = useState({
+  const [chicks, setChicks] = useState<ChicksObject>({
 		count: '',
 		price: '',
 	});

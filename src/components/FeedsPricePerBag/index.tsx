@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+type FeedObject = {
+	bags: string;
+	price: string;
+}
+
 const FeedPricePerBag: React.FC = () => {
 	const [feed, setFeed] = useState({
 		bags: '',
