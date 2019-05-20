@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+import { chicksCostReducer } from '../../reducers';
 
 type ChicksObject = {
   count: string;
@@ -6,15 +7,18 @@ type ChicksObject = {
 }
 
 const ChicksPriceColumn: React.FC = () => {
-  const [chicks, setChicks] = useState<ChicksObject>({
+  const [state, dispatch] = useReducer(chicksCostReducer, {
 		count: '',
 		price: '',
 	});
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => setChicks({
-		...chicks,
-		[e.target.name]: e.target.value,
-	});
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => dispatch({
+		type: 'TEXT_INPUT_CHICKS',
+		value: {
+			...state,
+			[e.target.name]: e.target.value,
+		},
+	})
 
   return (
     <div className="columns is-mobile">
@@ -32,7 +36,7 @@ const ChicksPriceColumn: React.FC = () => {
 									placeholder="Number of chicks"
 									name="count"
                   onChange={onChange}
-                  value={chicks.count}
+                  value={state.count}
                 />
               </p>
             </div>
@@ -53,7 +57,7 @@ const ChicksPriceColumn: React.FC = () => {
 									placeholder="Price per chick"
 									name="price"
                   onChange={onChange}
-                  value={chicks.price}
+                  value={state.price}
                 />
               </p>
             </div>
@@ -63,7 +67,7 @@ const ChicksPriceColumn: React.FC = () => {
 			<div className="column">
 				{
 					new Intl.NumberFormat('en-US', { style: 'currency', currency: 'KES' })
-						.format(Number(chicks.count) * Number(chicks.price))
+						.format(Number(state.count) * Number(state.price))
 				}
 			</div>
     </div>
